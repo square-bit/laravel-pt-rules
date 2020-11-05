@@ -1,0 +1,36 @@
+{
+  "name": "square-bit/laravel-pt-rules",
+  "description": "Validation rules relevant to Portugal",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Squarebit",
+      "email": "info@square-bit.com",
+      "homepage": "https://square-bit.com/"
+    }
+  ],
+  "homepage": "https://github.com/square-bit/laravel-pt-rules",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Squarebit\\PTRules\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Squarebit\\PTRules\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Squarebit\\PTRules\\PTRulesServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.4",
+    "laravel/framework": "^8.13"
+  }
+}
