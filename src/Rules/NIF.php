@@ -39,6 +39,6 @@ class NIF implements Rule
 
     public function message(): string
     {
-        return trans('sb-laravel-pt::invalidNIF');
+        return trans('sb-laravel-pt::translations.invalidNIF');
     }
 }

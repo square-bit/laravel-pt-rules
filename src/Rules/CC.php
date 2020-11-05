@@ -35,7 +35,7 @@ class CC implements Rule
 
     public function message(): string
     {
-        return trans('sb-laravel-pt::invalidCC');
+        return trans('sb-laravel-pt::translations.invalidCC');
     }
 
     private function getNumberFromChar($letter): int
