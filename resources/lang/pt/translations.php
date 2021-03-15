@@ -1,7 +1,7 @@
 <?php
 
 return [
-  "invalidBI" => "Número de B.I. inválido",
-  "invalidNIF" => "Número de Identificação Fiscal (NIF) inválido",
-  "invalidCC"  => "Número de Cartão do Cidadão inválido"
+    "invalidBI" => "':attribute' não é um B.I. válido.",
+    "invalidNIF" => "':attribute' não é um NIF válido.",
+    "invalidCC" => "':attribute' não é um CC válido.",
 ];
