@@ -31,6 +31,6 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9.4",
-    "laravel/framework": "^8.13"
+    "laravel/framework": "^8.13|^9.0"
   }
 }
