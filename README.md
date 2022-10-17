@@ -26,11 +26,12 @@ return Validator::make($data, [
 ```
 
 ## Available rules
-| Class | Description                                                                                                                                     |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| NIF   | Checks if the input is a valid Portuguese Fiscal ID number. Accepts both with and without the country preffix, ex: '123456789' or 'PT123456789' |
-| BI    | Checks if the input is a valid Portuguese Identification Card number. (requires the entire number, including the last digit)                    |
-| CC    | Checks if the input is a valid Portuguese Citizen Card number. (requires the full number, ex: "12233456 7 ZZ0")                                 |
+| Class      | Description                                                                                                                                                                                |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NIF        | Checks if the input is a valid Portuguese Fiscal ID number. Accepts both with and without the country preffix, ex: '123456789' or 'PT123456789'                                            |
+| CompanyNIF | Checks if the input is a valid Portuguese Fiscal ID number for a company (i.e. it starts with 5 or 9). Accepts both with and without the country preffix, ex: '523456789' or 'PT523456789' |
+| BI         | Checks if the input is a valid Portuguese Identification Card number. (requires the entire number, including the last digit)                                                               |
+| CC         | Checks if the input is a valid Portuguese Citizen Card number. (requires the full number, ex: "12233456 7 ZZ0")                                                                            |
 
 ## Change log
 
