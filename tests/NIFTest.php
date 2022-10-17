@@ -3,6 +3,7 @@
 namespace Squarebit\PTRules\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Squarebit\PTRules\Rules\CompanyNIF;
 use Squarebit\PTRules\Rules\NIF;
 
 class NIFTest extends TestCase
@@ -28,6 +29,26 @@ class NIFTest extends TestCase
     }
 
     /**
+     * @test
+     * @dataProvider validCompanyNIFs
+     */
+    public function it_passes_on_valid_company_nifs(int $input): void
+    {
+        $nif = new CompanyNIF();
+        self::assertTrue($nif->passes(null, $input));
+    }
+
+    /**
+     * @test
+     * @dataProvider invalidCompanyNIFs
+     */
+    public function it_fails_on_invalid_company_nifs(int $input): void
+    {
+        $nif = new CompanyNIF();
+        self::assertTrue($nif->passes(null, $input));
+    }
+
+    /**
      * DATA PROVIDERS
      */
     public function validNIFs(): array
@@ -40,6 +61,32 @@ class NIFTest extends TestCase
             [510960316],
             [770007694],
             [980088542],
+        ];
+    }
+
+    /**
+     * DATA PROVIDERS
+     */
+    public function validCompanyNIFs(): array
+    {
+        return [
+            [504299948],
+            [515356654],
+            [980088542],
+        ];
+    }
+
+    /**
+     * DATA PROVIDERS
+     */
+    public function invalidCompanyNIFs(): array
+    {
+        return [
+            [209895071],
+            [225399210],
+            [213334607],
+            [260594636],
+            [770007694],
         ];
     }
 
