@@ -8,17 +8,23 @@ use Illuminate\Contracts\Validation\Rule;
 
 class NIF implements Rule
 {
+    protected $nif='';
+
+    protected string $messageKey = 'sb-laravel-pt::translations.invalidNIF';
+
     public function passes($attribute, $nif): bool
     {
-        return $this->check($this->clean((string) $nif));
+        $this->nif = $nif;
+
+        return $this->check($this->clean($nif));
     }
 
     public function message(): string
     {
-        return trans('sb-laravel-pt::translations.invalidNIF');
+        return trans($this->messageKey, ['nif' => $this->nif]);
     }
 
-    protected function clean(string $nif): string
+    protected function clean($nif): string
     {
         $nif = str_replace([' ', '-', '.', ','], '', trim((string) $nif));
 
@@ -30,7 +36,7 @@ class NIF implements Rule
         return $nif;
     }
 
-    protected function check(string $nif): bool
+    protected function check($nif): bool
     {
         $nif_split = str_split($nif);
         $nif_primeiros_digito = [1, 2, 3, 5, 6, 7, 8, 9];

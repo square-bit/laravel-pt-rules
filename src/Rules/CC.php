@@ -8,8 +8,14 @@ use Illuminate\Contracts\Validation\Rule;
 
 class CC implements Rule
 {
+    protected $cc='';
+
+    protected string $messageKey = 'sb-laravel-pt::translations.invalidCC';
+
     public function passes($attribute, $cc): bool
     {
+        $this->cc = $cc;
+
         $cc = str_replace([' ', '-', '.', ','], '', trim((string) $cc));
         $cardNumber = strtoupper($cc);
         $sum = 0;
@@ -35,15 +41,15 @@ class CC implements Rule
 
     public function message(): string
     {
-        return trans('sb-laravel-pt::translations.invalidCC');
+        return trans($this->messageKey, ['cc' => $this->cc]);
     }
 
     private function getNumberFromChar($letter): int
     {
         if (is_numeric($letter)) {
             return (int) $letter;
-        } else {
-            return ord($letter) - 55;
         }
+
+        return ord($letter) - 55;
     }
 }

@@ -6,8 +6,5 @@ namespace Squarebit\PTRules\Rules;
 
 class BI extends NIF
 {
-    public function message(): string
-    {
-        return trans('sb-laravel-pt::translations.invalidBI');
-    }
+    protected string $messageKey ='sb-laravel-pt::translations.invalidBI';
 }

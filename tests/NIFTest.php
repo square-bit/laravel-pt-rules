@@ -45,7 +45,7 @@ class NIFTest extends TestCase
     public function it_fails_on_invalid_company_nifs(int $input): void
     {
         $nif = new CompanyNIF();
-        self::assertTrue($nif->passes(null, $input));
+        self::assertFalse($nif->passes(null, $input));
     }
 
     /**
